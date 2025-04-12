@@ -105,7 +105,7 @@ This is a football tournament simulator built with Laravel and Vue.js. It allows
   php artisan test
   ```
 
-- Run with coverage:
+- Run PHP tests with coverage (requires [xdebug](https://pecl.php.net/package/xdebug) or [pcov](https://pecl.php.net/package/pcov)):
   ```bash
   php artisan test --coverage
   ```
