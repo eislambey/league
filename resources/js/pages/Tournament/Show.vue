@@ -45,7 +45,7 @@ const disablePlayButtons = computed(() => {
     return activeFixtureWeek.value !== null || !isPlayable.value || allPlaying.value;
 });
 
-const playFixture = async (wait) => {
+const playFixture = async () => {
     if (!nextFixture.value) {
         toast.error('No fixtures to play');
         return;
@@ -101,19 +101,12 @@ const playAllFixtures = async () => {
         return;
     }
     allPlaying.value = true;
-    // Display an initial toast notification
     toast.info('Playing all remaining fixtures...');
 
     try {
-        let fixtureToPlay = nextFixture.value;
-        while (fixtureToPlay) {
-            // Add a delay to see changes
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-
+        while (nextFixture.value) {
+            await new Promise((resolve) => setTimeout(resolve, 750)); // Add a delay to see changes
             await playFixture();
-
-            // Get the next fixture from the updated tournament data
-            fixtureToPlay = tournament.fixtures.find((fixture) => fixture.state === 'created');
         }
     } catch (error) {
         toast.error('Error playing fixtures');
