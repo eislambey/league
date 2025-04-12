@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
- *
+ * 
  *
  * @property int $id
  * @property string $name
@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property-read int|null $fixtures_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
  * @property-read int|null $teams_count
+ * @property-read \App\Models\Team|null $winner
+ * @method static \Database\Factories\TournamentFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tournament newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tournament newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Tournament query()

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- *
+ * 
  *
  * @property int $id
  * @property int $home_team_id
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read \App\Models\Team $awayTeam
  * @property-read \App\Models\Team $homeTeam
  * @property-read \App\Models\Tournament $tournament
+ * @method static \Database\Factories\FixtureFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Fixture newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Fixture newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Fixture query()
