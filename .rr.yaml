@@ -1,0 +1,30 @@
+version: '3'
+
+rpc:
+  listen: tcp://127.0.0.1:6001
+server:
+  command: "php ./vendor/bin/roadrunner-worker"
+  relay: pipes
+  env:
+    - APP_ENV: production
+
+http:
+  address: '0.0.0.0:8000'
+  pool:
+    num_workers: 4
+    max_jobs: 1024
+    supervisor:
+      max_worker_memory: 256
+  static:
+    dir: public
+  middleware:
+    - static
+    - gzip
+    - sendfile
+
+logs:
+  level: info
+  mode: raw
+  channels:
+    http:
+      output: /dev/null
