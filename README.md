@@ -104,3 +104,8 @@ This is a football tournament simulator built with Laravel and Vue.js. It allows
   ```bash
   php artisan test
   ```
+
+- Run with coverage:
+  ```bash
+  php artisan test --coverage
+  ```
